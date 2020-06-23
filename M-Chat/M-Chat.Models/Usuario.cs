@@ -8,8 +8,10 @@ namespace M_Chat.Models
     public class Usuario
     {
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         public string Contraseña { get; set; }
         [Required]
         public DateTime Fecha_Nacimiento { get; set; }

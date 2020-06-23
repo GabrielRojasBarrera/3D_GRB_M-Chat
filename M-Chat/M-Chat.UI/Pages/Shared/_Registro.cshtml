@@ -25,19 +25,19 @@
 
     <!-- Main CSS-->
     <link href="~/css/maine.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
 </head>
 
 <body>
     <div class="container">
         @RenderBody()
     </div>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100" style="background-image: url('../assets/img/bg-01.jpg'); ">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <a asp-page="/Index" class="txt2 bo1">
-                        Home
-                    </a>
+                    <h2 class="title">Formulario de registro</h2>
                     <form method="POST">
                         <div class="row row-space">
                             <div class="col-2">
@@ -56,6 +56,21 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
+                                    <label class="label">Curp</label>
+                                    <input class="input--style-4" type="text" name="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Nacionalidad</label>
+                                    <input class="input--style-4" type="text" name="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
                                     <label class="label">Fecha de nacimiento</label>
                                     <div class="input-group-icon">
                                         <input class="input--style-4 js-datepicker" type="text" name="birthday">
@@ -68,12 +83,12 @@
                                     <label class="label">Genero</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">
-                                            Male
+                                            Hombre
                                             <input type="radio" checked="checked" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">
-                                            Female
+                                            Mujer
                                             <input type="radio" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
@@ -94,8 +109,28 @@
                                     <input class="input--style-4" type="text" name="password">
                                 </div>
                             </div>
-                                               
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Registrarse</button>
+                            <div class="w-full text-center p-t-55">
+                                <span class="txt2">
+                                    Para obtener más información acerca de cómo M-Chat recopila, utiliza, comparte y protege tus datos personales, consulta la
+                                </span>
+
+                                <a asp-page="Registro" class="txt2 ">
+                                    Política de Privacidad
+                                </a>
+                            </div>
+
+                            <div class="container-login100-form-btn m-t-17">
+                                <button class="login100-form-btn" asp-page="/Index">
+                                    REGISTRARSE
+                                </button>
+                            </div>
+
+                            <div class="w-full text-center p-t-55">
+                                <a asp-page="/Index" class="txt1 ">
+                                    Inicio
+                                </a>
+                            </div>
+
                         </div>
                     </form>
                 </div>
@@ -113,7 +148,6 @@
     <!-- Main JS-->
     <script src="~/js/global.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
-<!-- end document-->
