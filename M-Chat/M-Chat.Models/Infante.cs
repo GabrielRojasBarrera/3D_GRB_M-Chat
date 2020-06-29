@@ -9,7 +9,7 @@ namespace M_Chat.Models
     public class Infante
     {
         [Key]
-        public string Curp_Infante { get; set; }
+        public int Curp_Infante { get; set; }
         [Required]
         public string Nombre { get; set; }
         [Required]

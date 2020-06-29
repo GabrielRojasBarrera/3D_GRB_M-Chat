@@ -10,7 +10,7 @@ namespace M_Chat.Models
     public class Centro_educativo
     {
         [Key]
-        public string Clave { get; set; }
+        public int Clave { get; set; }
         [Required]
         public string Nombre_CentroEducativo { get; set; }
         [Required]
