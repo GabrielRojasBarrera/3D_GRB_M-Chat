@@ -18,7 +18,7 @@
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Debes introducir tu correo electrónico.">
-                    <input class="input100" type="text" name="username">
+                    <input class="input100" type="text" name="username" asp-for="Tutor.Email">
                     <span class="focus-input100"></span>
                 </div>
 
@@ -32,12 +32,12 @@
                     </a>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Debes introducir una contraseña.">
-                    <input class="input100" type="password" name="pass">
+                    <input class="input100" type="password" name="pass" asp-for="Tutor.Contraseña">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button class="login100-form-btn" asp-page="UserPage">
+                    <button class="login100-form-btn" >
                         INICIAR SESIÓN
                     </button>
                 </div>
