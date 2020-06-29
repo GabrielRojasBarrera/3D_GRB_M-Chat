@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace M_Chat.UI.Pages.Home
 {
-    public class HomePageModel : PageModel
+    public class UserPageModel : PageModel
     {
         public void OnGet()
         {

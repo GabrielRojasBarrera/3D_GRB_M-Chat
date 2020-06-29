@@ -5,7 +5,7 @@ using System.Text;
 
 namespace M_Chat.Services
 {
-    public interface IRepository<T> where T : Usuario
+    public interface IRepository<T> where T : Tutor
     {
         public IEnumerable<T> GetAll();
 

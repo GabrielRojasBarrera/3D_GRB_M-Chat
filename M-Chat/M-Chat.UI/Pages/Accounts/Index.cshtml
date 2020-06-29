@@ -1,0 +1,68 @@
+﻿@page
+@model M_Chat.UI.Pages.Accounts.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].Contraseña)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].Fecha_Nacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].Genero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor[0].Curp)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tutor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contraseña)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Nacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curp)
+            </td>
+           
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Email">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Email">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Email">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

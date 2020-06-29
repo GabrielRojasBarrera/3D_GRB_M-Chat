@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace M_Chat.Services
 {
-    public class SQLRepository<T> :  IRepository<T> where T : Usuario
+    public class SQLRepository<T> :  IRepository<T> where T : Tutor
     {
         protected readonly AppDBContext context;
         private DbSet<T> entity;
@@ -23,6 +23,8 @@ namespace M_Chat.Services
             if (obj == null) throw new ArgumentException("Usuario");
 
             if (obj.Email == null) throw new ArgumentException("Email es requerido");
+
+            
 
             var temp = entity.Attach(obj);
             temp.State = EntityState.Modified;

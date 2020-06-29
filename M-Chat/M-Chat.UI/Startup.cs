@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using M_Chat.UI.Data;
 
 namespace M_Chat.UI
 {
@@ -25,14 +26,15 @@ namespace M_Chat.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<AppDBContext>(option =>
-            {
-            option.UseSqlServer(Configuration.GetConnectionString("EFDbConnection"));
+            services.AddDbContextPool<AppDBContext>(option => {
+              option.UseSqlServer(Configuration.GetConnectionString("EFDbConnection"));
             });
 
             services.AddRazorPages();
             services.AddScoped<AppDBContext>();
             services.AddScoped(typeof(IRepository<>), typeof(SQLRepository<>));
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

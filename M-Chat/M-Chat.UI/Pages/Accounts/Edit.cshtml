@@ -1,0 +1,61 @@
+﻿@page
+@model M_Chat.UI.Pages.Accounts.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Tutor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Tutor.Email" />
+            <div class="form-group">
+                <label asp-for="Tutor.Contraseña" class="control-label"></label>
+                <input asp-for="Tutor.Contraseña" class="form-control" />
+                <span asp-validation-for="Tutor.Contraseña" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tutor.Fecha_Nacimiento" class="control-label"></label>
+                <input asp-for="Tutor.Fecha_Nacimiento" class="form-control" />
+                <span asp-validation-for="Tutor.Fecha_Nacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tutor.Genero" class="control-label"></label>
+                <input asp-for="Tutor.Genero" class="form-control" />
+                <span asp-validation-for="Tutor.Genero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tutor.Nombre" class="control-label"></label>
+                <input asp-for="Tutor.Nombre" class="form-control" />
+                <span asp-validation-for="Tutor.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tutor.Apellido" class="control-label"></label>
+                <input asp-for="Tutor.Apellido" class="form-control" />
+                <span asp-validation-for="Tutor.Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tutor.Curp" class="control-label"></label>
+                <input asp-for="Tutor.Curp" class="form-control" />
+                <span asp-validation-for="Tutor.Curp" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

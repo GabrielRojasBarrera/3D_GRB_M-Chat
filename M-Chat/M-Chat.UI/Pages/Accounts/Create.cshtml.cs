@@ -8,22 +8,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using M_Chat.Models;
 using M_Chat.Services;
 
-namespace M_Chat.UI.Pages.Home
+namespace M_Chat.UI.Pages.Accounts
 {
-    public class RegistroModel : PageModel
+    public class CreateModel : PageModel
     {
         private readonly M_Chat.Services.AppDBContext _context;
 
-        public RegistroModel(M_Chat.Services.AppDBContext context)
+        public CreateModel(M_Chat.Services.AppDBContext context)
         {
             _context = context;
         }
-
 
         public IActionResult OnGet()
         {
             return Page();
         }
+
         [BindProperty]
         public Tutor Tutor { get; set; }
 
@@ -41,7 +41,5 @@ namespace M_Chat.UI.Pages.Home
 
             return RedirectToPage("./Index");
         }
-
-
     }
 }
