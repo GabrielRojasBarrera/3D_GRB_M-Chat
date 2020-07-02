@@ -27,8 +27,7 @@ namespace M_Chat.UI.Pages.Accounts
         [BindProperty]
         public Tutor Tutor { get; set; }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
+        
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -39,7 +38,7 @@ namespace M_Chat.UI.Pages.Accounts
             _context.Tutor.Add(Tutor);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Home/UserPage");
         }
     }
 }

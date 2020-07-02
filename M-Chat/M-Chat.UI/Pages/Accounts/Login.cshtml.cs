@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using M_Chat.Models;
 using M_Chat.Services;
@@ -19,23 +20,31 @@ namespace M_Chat.UI.Pages.Home
         {
             _context = context;
         }
-
+        [BindProperty]
         public Tutor Tutor { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string id)
+
+
+        public async Task<IActionResult> OnPostAsync(string id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
+
+            _context.Tutor.Find(id);
             Tutor = await _context.Tutor.FirstOrDefaultAsync(m => m.Email == id);
-
             if (Tutor == null)
             {
-                return NotFound();
+                return Page();
             }
-            return Page();
+            return RedirectToPage("/Home/UserPage");
+
+
+
         }
+        
+        
+
+
+
+
     }
 }

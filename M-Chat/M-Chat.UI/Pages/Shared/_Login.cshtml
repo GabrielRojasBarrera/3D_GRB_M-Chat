@@ -31,7 +31,7 @@
     <div class="container">
         @RenderBody()
     </div>
-    
+
     <!--===============================================================================================-->
     <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
@@ -48,5 +48,6 @@
     <script src="~/vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
