@@ -10,7 +10,7 @@ namespace M_Chat.Models
     public class Centro_educativo
     {
         [Key]
-        public int Clave { get; set; }
+        public int CentroId { get; set; }
         [Required]
         public string Nombre_CentroEducativo { get; set; }
         [Required]
@@ -20,10 +20,12 @@ namespace M_Chat.Models
         [Required]
         public string Direccion { get; set; }
         [Required]
-        public string Representante_Institucion { get; set; }
+        public string Representante { get; set; }
+        [Required]
+        public string Clave { get; set; }
 
         //Referencias
-        
+
         public List<Infante> Infantes { get; set; }
 
     }

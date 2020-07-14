@@ -9,8 +9,9 @@ namespace M_Chat.Models
     public class Tutor
     {
         [Key]
+        public int TutorId { get; set; }
         [EmailAddress]
-        [Required(ErrorMessage ="Su Email es requerido")]
+        [Required(ErrorMessage ="Su Email es requerido")]        
         public string Email { get; set; }
         [Required(ErrorMessage = "Su Contraseña es requerido")]
         [DataType(DataType.Password)]
@@ -26,14 +27,13 @@ namespace M_Chat.Models
         public string Apellido { get; set; }
         [Required]
         public string Curp { get; set; }
-        
-       
 
         //Referencias
-      
-        public List<Infante> Infantes { get; set; }
+        public ICollection<Infante> Infantes { get; set; }
+        
 
-        public List<Respuestas> Respuestas { get; set; }
+
+
 
 
 

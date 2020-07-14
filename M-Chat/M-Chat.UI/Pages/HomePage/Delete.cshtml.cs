@@ -4,18 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using M_Chat.Models;
 using M_Chat.Services;
 
-namespace M_Chat.UI.Pages.Accounts
+namespace M_Chat.UI.Pages.HomePage
 {
-    public class EditModel : PageModel
+    public class DeleteModel : PageModel
     {
         private readonly M_Chat.Services.AppDBContext _context;
 
-        public EditModel(M_Chat.Services.AppDBContext context)
+        public DeleteModel(M_Chat.Services.AppDBContext context)
         {
             _context = context;
         }
@@ -39,39 +38,22 @@ namespace M_Chat.UI.Pages.Accounts
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return Page();
+                return NotFound();
             }
 
-            _context.Attach(Tutor).State = EntityState.Modified;
+            Tutor = await _context.Tutor.FindAsync(id);
 
-            try
+            if (Tutor != null)
             {
+                _context.Tutor.Remove(Tutor);
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TutorExists(Tutor.TutorId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
             }
 
             return RedirectToPage("./Index");
-        }
-
-        private bool TutorExists(int id)
-        {
-            return _context.Tutor.Any(e => e.TutorId == id);
         }
     }
 }

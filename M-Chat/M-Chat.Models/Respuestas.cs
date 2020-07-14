@@ -9,17 +9,16 @@ namespace M_Chat.Models
     public class Respuestas
     {
         [Key]
-        public int id_Respuesta { get; set; }
+        public int RespuestaId { get; set; }
         [Required]
         public bool Respuesta { get; set; }
 
         //Referencias
-        [ForeignKey("Tutor")]
-        public  string Email { get; set; }
+        
+        [ForeignKey("Preguntas")]
+        public int PreguntaId { get; set; }
+        public Preguntas Preguntas { get; set; }
 
-        [ForeignKey("Pregunta")]
-        public string id_Pregunta { get; set; }
 
-        public List<Diagnostico> Diagnosticos { get; set; }
     }
 }

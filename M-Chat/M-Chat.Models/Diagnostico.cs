@@ -10,16 +10,19 @@ namespace M_Chat.Models
     public class Diagnostico
     {
         [Key]
-        public int id_Diagnostico { get; set; }
+        public int DiagnosticoId { get; set; }
         [Required]
         public string Resultado { get; set; }
 
         //Referencias
         [ForeignKey("Infante")]
-        public string Curp_Infante { get; set; }
-        [ForeignKey("Respuesta")]
-        public int id_Respuesta { get; set; }
+        public int InfanteId { get; set; }
+        public Infante Infante { get; set; }
+        
+        [ForeignKey("Cuestionario")]
+        public int CuestionarioId { get; set; }
+        public Cuestionario Cuestionario { get; set; }
 
 
-     }
+    }
 }

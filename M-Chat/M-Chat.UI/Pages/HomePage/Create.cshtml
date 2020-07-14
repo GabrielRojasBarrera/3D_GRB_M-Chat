@@ -1,0 +1,109 @@
+﻿@page
+@model M_Chat.UI.Pages.HomePage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Registro";
+}
+
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100" style="background-image: url('../assets/img/bg-01.jpg'); ">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Formulario de registro</h2>
+                    <form method="post">
+                        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label asp-for="Tutor.Nombre" class="control-label"></label>
+                                    <input class="input--style-4 form-control" asp-for="Tutor.Nombre">
+                                    <span asp-validation-for="Tutor.Nombre" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label asp-for="Tutor.Apellido" class="control-label"></label>
+                                    <input class="input--style-4 form-control" asp-for="Tutor.Apellido">
+                                    <span asp-validation-for="Tutor.Apellido" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label asp-for="Tutor.Curp" class="control-label"></label>
+                                    <input class="input--style-4 form-control" asp-for="Tutor.Curp">
+                                    <span asp-validation-for="Tutor.Curp" class="text-danger"></span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label asp-for="Tutor.Fecha_Nacimiento" class="control-label"></label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 form-control" asp-for="Tutor.Fecha_Nacimiento">
+                                        <span asp-validation-for="Tutor.Fecha_Nacimiento" class="text-danger"></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label asp-for="Tutor.Genero" class="control-label"></label>
+                                    <input class="input--style-4 form-control" asp-for="Tutor.Genero">
+                                    <span asp-validation-for="Tutor.Genero" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="Tutor.Email"></label>
+                                    <input class="input--style-4 form-control" asp-for="Tutor.Email">
+                                    <span class="text-danger" asp-validation-for="Tutor.Email"></span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="Tutor.Contraseña"></label>
+                                    <input class="input--style-4 form-control" asp-for="Tutor.Contraseña">
+                                    <span class="text-danger" asp-validation-for="Tutor.Contraseña"></span>
+                                </div>
+                            </div>
+
+                            <div class="w-full text-center p-t-55">
+                                <span class="txt2">
+                                    Para obtener más información acerca de cómo M-Chat recopila, utiliza, comparte y protege tus datos personales, consulta la
+                                </span>
+
+                                <a asp-page="Registro" class="txt2 ">
+                                    Política de Privacidad
+                                </a>
+                            </div>
+
+                            <div class="w-full text-center p-t-55">
+                                <a asp-page="/Index" class="txt1 ">
+                                    Inicio
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" >
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

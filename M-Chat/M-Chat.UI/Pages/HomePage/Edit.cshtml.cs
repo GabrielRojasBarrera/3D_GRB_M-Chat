@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using M_Chat.Models;
 using M_Chat.Services;
 
-namespace M_Chat.UI.Pages.Accounts
+namespace M_Chat.UI.Pages.HomePage
 {
     public class EditModel : PageModel
     {

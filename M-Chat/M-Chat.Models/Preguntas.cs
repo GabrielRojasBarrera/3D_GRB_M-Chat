@@ -10,14 +10,15 @@ namespace M_Chat.Models
     public class Preguntas
     {
         [Key]
-        public int id_Pregunta { get; set; }
+        public int PreguntaId { get; set; }
         [Required]
         public string Respuesta { get; set; }
         //Referencias
         [ForeignKey("Cuestionario")]
-        public int id_Cuestionario { get; set; }
-      
-        public List<Respuestas> Respuestas { get; set; }
+        public int CuestionarioId { get; set; }
+        public Cuestionario Cuestionario { get; set; }
+
+        public ICollection<Respuestas> Respuestas { get; set; }
 
     }
 }
