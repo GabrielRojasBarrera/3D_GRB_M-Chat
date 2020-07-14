@@ -1,0 +1,85 @@
+﻿@page
+@model M_Chat.UI.Pages.Infantes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutUserPage";
+}
+
+<h1>Index</h1>
+
+<section class="page-section" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Registros</h2>
+            <h3 class="section-subheading text-muted">Infantes Registrados.</h3>
+        </div>
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Infante[0].Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Infante[0].Apellido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Infante[0].Fecha_Nacimiento_Infante)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Infante[0].Genero_Infante)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Infante[0].Curp)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Infante[0].Tutor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Infante[0].CentroId)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Infante)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fecha_Nacimiento_Infante)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genero_Infante)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Curp)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tutor.Apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CentroId)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.InfanteId">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.InfanteId">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.InfanteId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+    </div>
+</section>

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using M_Chat.Models;
 using M_Chat.Services;
 
-namespace M_Chat.UI.Pages.HomePage
+namespace M_Chat.UI.Pages.Cuestionarios
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace M_Chat.UI.Pages.HomePage
         }
 
         [BindProperty]
-        public Tutor Tutor { get; set; }
+        public Cuestionario Cuestionario { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace M_Chat.UI.Pages.HomePage
                 return NotFound();
             }
 
-            Tutor = await _context.Tutor.FirstOrDefaultAsync(m => m.TutorId == id);
+            Cuestionario = await _context.Cuestionario.FirstOrDefaultAsync(m => m.CuestionarioId == id);
 
-            if (Tutor == null)
+            if (Cuestionario == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace M_Chat.UI.Pages.HomePage
                 return Page();
             }
 
-            _context.Attach(Tutor).State = EntityState.Modified;
+            _context.Attach(Cuestionario).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace M_Chat.UI.Pages.HomePage
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TutorExists(Tutor.TutorId))
+                if (!CuestionarioExists(Cuestionario.CuestionarioId))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace M_Chat.UI.Pages.HomePage
             return RedirectToPage("./Index");
         }
 
-        private bool TutorExists(int id)
+        private bool CuestionarioExists(int id)
         {
-            return _context.Tutor.Any(e => e.TutorId == id);
+            return _context.Cuestionario.Any(e => e.CuestionarioId == id);
         }
     }
 }

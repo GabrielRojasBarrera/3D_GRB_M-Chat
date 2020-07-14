@@ -12,7 +12,7 @@ namespace M_Chat.Models
         [Key]
         public int PreguntaId { get; set; }
         [Required]
-        public string Respuesta { get; set; }
+        public string Pregunta { get; set; }
         //Referencias
         [ForeignKey("Cuestionario")]
         public int CuestionarioId { get; set; }

@@ -1,0 +1,59 @@
+﻿@page
+@model M_Chat.UI.Pages.Centros.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Centro_educativo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Centro_educativo.Nombre_CentroEducativo" class="control-label"></label>
+                <input asp-for="Centro_educativo.Nombre_CentroEducativo" class="form-control" />
+                <span asp-validation-for="Centro_educativo.Nombre_CentroEducativo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Centro_educativo.Telefono" class="control-label"></label>
+                <input asp-for="Centro_educativo.Telefono" class="form-control" />
+                <span asp-validation-for="Centro_educativo.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Centro_educativo.Nivel_Educativo" class="control-label"></label>
+                <input asp-for="Centro_educativo.Nivel_Educativo" class="form-control" />
+                <span asp-validation-for="Centro_educativo.Nivel_Educativo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Centro_educativo.Direccion" class="control-label"></label>
+                <input asp-for="Centro_educativo.Direccion" class="form-control" />
+                <span asp-validation-for="Centro_educativo.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Centro_educativo.Representante" class="control-label"></label>
+                <input asp-for="Centro_educativo.Representante" class="form-control" />
+                <span asp-validation-for="Centro_educativo.Representante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Centro_educativo.Clave" class="control-label"></label>
+                <input asp-for="Centro_educativo.Clave" class="form-control" />
+                <span asp-validation-for="Centro_educativo.Clave" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

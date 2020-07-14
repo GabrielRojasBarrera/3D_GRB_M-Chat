@@ -1,12 +1,11 @@
 ﻿@page
-@model M_Chat.UI.Pages.Accounts.EditModel
+@model M_Chat.UI.Pages.HomePage.EditModel
 
 @{
     ViewData["Title"] = "Edit";
     Layout = "_Registro";
-
-
 }
+
 
 
 
@@ -66,7 +65,13 @@
 
                     </div>
                     <div class="row row-space">
-
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label asp-for="Tutor.Email" class="control-label"></label>
+                                <input asp-for="Tutor.Email" class="form-control input--style-4" />
+                                <span asp-validation-for="Tutor.Email" class="text-danger"></span>
+                            </div>
+                        </div>
                         <div class="col-2">
                             <div class="form-group">
                                 <label class="control-label" asp-for="Tutor.Contraseña"></label>
@@ -74,18 +79,10 @@
                                 <span class="text-danger" asp-validation-for="Tutor.Contraseña"></span>
                             </div>
                         </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label asp-for="Tutor.Email" class="control-label"></label>
-                                <input asp-for="Tutor.Email" class="form-control input--style-4"/>
-                                <span asp-validation-for="Tutor.Email" class="text-danger"></span>
-                            </div>
-                        </div>
-
 
                         <div class="w-full text-center p-t-55">
-                            <a asp-page="./Details" class="txt1 ">
-                                Inicio
+                            <a asp-page="./DetailsUser" asp-route-id="@Model.Tutor.TutorId" class="txt1 ">
+                                Cancelar
                             </a>
                         </div>
 
@@ -99,6 +96,8 @@
         </div>
     </div>
 </div>
+
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

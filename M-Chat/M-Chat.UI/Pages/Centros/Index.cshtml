@@ -1,0 +1,78 @@
+﻿@page
+@model M_Chat.UI.Pages.Centros.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutUserPage";
+}
+
+    <h1>Index</h1>
+
+<section class="page-section " id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Centros Educativos</h2>
+            <h3 class="section-subheading text-muted">CE Registrados</h3>
+        </div>
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Centro_educativo[0].Nombre_CentroEducativo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Centro_educativo[0].Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Centro_educativo[0].Nivel_Educativo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Centro_educativo[0].Direccion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Centro_educativo[0].Representante)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Centro_educativo[0].Clave)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Centro_educativo)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre_CentroEducativo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nivel_Educativo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Direccion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Representante)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Clave)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.CentroId">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.CentroId">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.CentroId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</section>

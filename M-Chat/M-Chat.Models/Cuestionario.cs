@@ -11,8 +11,7 @@ namespace M_Chat.Models
     {
         [Key]
         public int CuestionarioId { get; set; }
-        [Required]
-        public String Descripccion { get; set; }
+        
         [Required]
         public DateTime Fecha_aplicacion { get; set; }
         //Referencias

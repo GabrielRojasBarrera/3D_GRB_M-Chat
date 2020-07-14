@@ -1,0 +1,42 @@
+﻿@page
+@model M_Chat.UI.Pages.Respuesta.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Respuestas[0].Respuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Respuestas[0].Preguntas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Respuestas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Respuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preguntas.Pregunta)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RespuestaId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RespuestaId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RespuestaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using M_Chat.Models;
 using M_Chat.Services;
 
-namespace M_Chat.UI.Pages.HomePage
+namespace M_Chat.UI.Pages.Infantes
 {
     public class CreateModel : PageModel
     {
@@ -21,11 +21,14 @@ namespace M_Chat.UI.Pages.HomePage
 
         public IActionResult OnGet()
         {
+        ViewData["TutorId"] = new SelectList(_context.Tutor, "TutorId", "Email");
+        ViewData["CentroId"] = new SelectList(_context.Centro_Educativo, "CentroId", "Nombre_CentroEducativo");
+
             return Page();
         }
 
         [BindProperty]
-        public Tutor Tutor { get; set; }
+        public Infante Infante { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -36,11 +39,10 @@ namespace M_Chat.UI.Pages.HomePage
                 return Page();
             }
 
-            _context.Tutor.Add(Tutor);
+            _context.Infante.Add(Infante);
             await _context.SaveChangesAsync();
-            
 
-            return Redirect("./Details?id=" + Tutor.TutorId);
+            return RedirectToPage("./Index");
         }
     }
 }

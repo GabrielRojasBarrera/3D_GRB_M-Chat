@@ -1,0 +1,63 @@
+﻿@page
+@model M_Chat.UI.Pages.Infantes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Infante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Infante.Nombre" class="control-label"></label>
+                <input asp-for="Infante.Nombre" class="form-control" />
+                <span asp-validation-for="Infante.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Infante.Apellido" class="control-label"></label>
+                <input asp-for="Infante.Apellido" class="form-control" />
+                <span asp-validation-for="Infante.Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Infante.Fecha_Nacimiento_Infante" class="control-label"></label>
+                <input asp-for="Infante.Fecha_Nacimiento_Infante" class="form-control" />
+                <span asp-validation-for="Infante.Fecha_Nacimiento_Infante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Infante.Genero_Infante" class="control-label"></label>
+                <input asp-for="Infante.Genero_Infante" class="form-control" />
+                <span asp-validation-for="Infante.Genero_Infante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Infante.Curp" class="control-label"></label>
+                <input asp-for="Infante.Curp" class="form-control" />
+                <span asp-validation-for="Infante.Curp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Infante.TutorId" class="control-label"></label>
+                <select asp-for="Infante.TutorId" class ="form-control" asp-items="ViewBag.TutorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Infante.CentroId" class="control-label"></label>
+                <select asp-for="Infante.CentroId" class="form-control" asp-items="ViewBag.CentroId"></select>
+                <span asp-validation-for="Infante.CentroId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

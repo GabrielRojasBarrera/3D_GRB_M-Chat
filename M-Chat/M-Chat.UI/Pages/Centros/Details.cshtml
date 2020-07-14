@@ -1,0 +1,55 @@
+﻿@page
+@model M_Chat.UI.Pages.Centros.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Centro_educativo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Centro_educativo.Nombre_CentroEducativo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Centro_educativo.Nombre_CentroEducativo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Centro_educativo.Telefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Centro_educativo.Telefono)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Centro_educativo.Nivel_Educativo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Centro_educativo.Nivel_Educativo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Centro_educativo.Direccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Centro_educativo.Direccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Centro_educativo.Representante)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Centro_educativo.Representante)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Centro_educativo.Clave)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Centro_educativo.Clave)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Centro_educativo.CentroId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
