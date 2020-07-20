@@ -3,34 +3,137 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "_LayoutCuestions";
 }
 
-<h1>Create</h1>
 
-<h4>Respuestas</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Respuestas.Respuesta" /> @Html.DisplayNameFor(model => model.Respuestas.Respuesta)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Respuestas.PreguntaId" class="control-label"></label>
-                <select asp-for="Respuestas.PreguntaId" class ="form-control" asp-items="ViewBag.PreguntaId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="page-content">
+    <div class="wizard-v5-content">
+        <div class="wizard-form">
+            <form class="form-register"  method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div id="form-total">
+                    <!-- SECTION 1 -->
+                    <h2>
+                        <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+                        <span class="step-text">Personal Information</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" asp-for="Respuestas.Respuesta" /> @Html.DisplayNameFor(model => model.Respuestas.Respuesta)
+
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" asp-for="Respuestas.Respuesta" /> @Html.DisplayNameFor(model => model.Respuestas.Respuesta)
+
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- SECTION 2 -->
+                    <h2>
+                        <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+                        <span class="step-text">Bank Information</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <label for="email">Email Address:</label>
+                                    <input type="email" name="email" class="email input-step-2-1" id="email" placeholder="ex: example@email.com">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <label for="account_name">Account Name:</label>
+                                    <input type="text" placeholder="Account Name" class="form-control input-step-2-1" id="account_name" name="account_name">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <label for="account_number">Account Number:</label>
+                                    <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number">
+                                    <span class="card"><i class="zmdi zmdi-card"></i></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- SECTION 3 -->
+                    <h2>
+                        <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+                        <span class="step-text">Confirm Details</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+                            <h3>Comfirm Details</h3>
+                            <div class="form-row table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr class="space-row">
+                                            <th>Full Name:</th>
+                                            <td id="fullname-val"></td>
+                                        </tr>
+                                        <tr class="space-row">
+                                            <th>Email Address:</th>
+                                            <td id="email-val"></td>
+                                        </tr>
+                                        <tr class="space-row">
+                                            <th>Phone Number:</th>
+                                            <td id="phone-val"></td>
+                                        </tr>
+                                        <tr class="space-row">
+                                            <th>Address Location:</th>
+                                            <td id="address-val"></td>
+                                        </tr>
+                                        <tr class="space-row">
+                                            <th>Gender:</th>
+                                            <td id="gender-val"></td>
+                                        </tr>
+                                        <tr class="space-row">
+                                            <th>Account Name:</th>
+                                            <td id="account-name-val"></td>
+                                        </tr>
+                                        <tr class="space-row">
+                                            <th>Account Number:</th>
+                                            <td id="account-number-val"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
