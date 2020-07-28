@@ -55,7 +55,11 @@
                             <div class="col-2">
                                 <div class="form-group">
                                     <label asp-for="Tutor.Genero" class="control-label"></label>
-                                    <input class="input--style-4 form-control" asp-for="Tutor.Genero">
+                                    <select class="input--style-4 form-control" asp-for="Tutor.Genero">
+                                        <option value="Hombre">Hombre</option>
+                                        <option value="Mujer">Mujer</option>
+                                        <option value="No binario">No binario</option>
+                                    </select>
                                     <span asp-validation-for="Tutor.Genero" class="text-danger"></span>
                                 </div>
                             </div>

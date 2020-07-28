@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using M_Chat.Models;
 using M_Chat.Services;
 
-namespace M_Chat.UI.Pages.HomePage
+namespace M_Chat.UI.Pages.Diagnosticos
 {
     public class CreateModel : PageModel
     {
@@ -21,11 +21,13 @@ namespace M_Chat.UI.Pages.HomePage
 
         public IActionResult OnGet()
         {
+        ViewData["CuestionarioId"] = new SelectList(_context.Cuestionario, "CuestionarioId", "CuestionarioId");
+        ViewData["InfanteId"] = new SelectList(_context.Infante, "InfanteId", "Apellido");
             return Page();
         }
 
         [BindProperty]
-        public Tutor Tutor { get; set; }
+        public Diagnostico Diagnostico { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -35,12 +37,11 @@ namespace M_Chat.UI.Pages.HomePage
             {
                 return Page();
             }
-             Tutor.Contraseña = BCrypt.Net.BCrypt.HashPassword(Tutor.Contraseña);
-            _context.Tutor.Add(Tutor);
-            await _context.SaveChangesAsync();
-            
 
-            return Redirect("./DetailsUser?id=" + Tutor.TutorId);
+            _context.Diagnostico.Add(Diagnostico);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Index");
         }
     }
 }

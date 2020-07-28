@@ -1,6 +1,5 @@
 ﻿@page
 @model M_Chat.UI.Pages.Respuesta.CreateModel
-
 @{
     ViewData["Title"] = "Create";
     Layout = "_LayoutCuestions";
@@ -10,98 +9,373 @@
 <div class="page-content">
     <div class="wizard-v5-content">
         <div class="wizard-form">
-            <form class="form-register"  method="post">
+            <form class="form-register" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div id="form-total">
                     <!-- SECTION 1 -->
                     <h2>
                         <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
-                        <span class="step-text">Personal Information</span>
+                        <span class="step-text">Normales</span>
                     </h2>
                     <section>
                         <div class="inner">
 
                             <div class="form-row">
                                 <div class="form-holder form-holder-2 form-group">
-                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"></select>
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"  id="email" ><option value="1">¿Disfruta su hijo cuando se le balancea, se le hace saltar sobre sus rodillas? </option></select>
                                 </div>
 
                             </div>
                             <div class="form-row">
                                 <div class="form-group  form-check">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" asp-for="Respuestas.Respuesta" /> @Html.DisplayNameFor(model => model.Respuestas.Respuesta)
-
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" value=true />
+                                        NO<input type="checkbox" />
                                     </label>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-holder form-holder-2 form-group">
-                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"></select>
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"  id="address" ><option value="3"> ¿Le gusta a su hijo subirse a las cosas, como p.ej. las escaleras? </option></select>
                                 </div>
 
                             </div>
                             <div class="form-row">
                                 <div class="form-group  form-check">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" asp-for="Respuestas.Respuesta" /> @Html.DisplayNameFor(model => model.Respuestas.Respuesta)
-
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
                                     </label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <input type="submit" value="Create" class="btn btn-primary" />
+
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId" id="email" ><option value="4"> ¿Disfruta su hijo jugando a cucu-tras o al escondite? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
                             </div>
 
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="5"> ¿Su hijo simula alguna vez, por ejemplo, hablar por teléfono o cuidar a las muñecas o imagina otra cosa?  </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="6">  ¿Utiliza su hijo alguna vez su dedo índice para señalar pidiendo algo? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="8"> ¿Puede su hijo jugar apropiadamente con juguetes pequeños (ej. coches o bloques) sin metérselos en la boca, toquetearlos o tirarlos únicamente?  </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="10"> ¿Le mira su hijo a los ojos durante más de uno o dos segundos? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="11"> ¿Su hijo parece hipersensible a los ruidos? (ej. tapándose los oídos) </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="12"> ¿Responde su hijo con una sonrisa a su cara o a su sonrisa? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="16"> ¿Anda su hijo? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="17"> ¿Mira su hijo a las cosas que está usted mirando? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="18"> ¿Hace su hijo movimientos raros con los dedos cerca de su propia cara? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="19"> ¿Trata de atraer su hijo la atención sobre su propia actividad? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="20"> ¿Alguna vez ha sospechado que su hijo era sordo? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="21">¿Entiende su hijo lo que dice la gente? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="22"> ¿A veces su hijo se queda mirando fijamente al vacío o deambula sin ningún propósito? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="23"> ¿Mira su hijo a su cara para observar su reacción cuando se enfrenta con algo desconocido? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            
                         </div>
                     </section>
                     <!-- SECTION 2 -->
                     <h2>
                         <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
-                        <span class="step-text">Bank Information</span>
+                        <span class="step-text">Criticas</span>
                     </h2>
                     <section>
                         <div class="inner">
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="2">¿Muestra su hijo interés por otros niños?</option></select>
+                                </div>
 
+                            </div>
                             <div class="form-row">
-                                <div class="form-holder form-holder-2">
-                                    <label for="email">Email Address:</label>
-                                    <input type="email" name="email" class="email input-step-2-1" id="email" placeholder="ex: example@email.com">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-holder form-holder-2">
-                                    <label for="account_name">Account Name:</label>
-                                    <input type="text" placeholder="Account Name" class="form-control input-step-2-1" id="account_name" name="account_name">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="7"> ¿Utiliza su hijo alguna vez su dedo índice para señalar mostrando su interés en algo? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-holder form-holder-2">
-                                    <label for="account_number">Account Number:</label>
-                                    <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number">
-                                    <span class="card"><i class="zmdi zmdi-card"></i></span>
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="9"> ¿Le acerca su hijo alguna vez objetos para enseñárselos?  </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
                                 </div>
                             </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="13"> ¿Le imita su hijo? (ej. poner una cara que su hijo imita?) </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId"><option value="14"> ¿Su hijo responde cuando se le llama por su nombre? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" />
+                                        NO<input type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-group">
+                                    <select asp-for="Respuestas.PreguntaId" class="form-control" asp-items="ViewBag.PreguntaId" ><option value="15"> Si usted señala un juguete al otro lado de la habitación, ¿su hijo lo mira? </option></select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group  form-check">
+                                    <label class="form-check-label">
+                                        SI<input class="form-check-input" asp-for="Respuestas.Respuesta" value="true"/>
+                                        NO<input class="form-check-input" asp-for="Respuestas.Respuesta" value="false" />
+                                    </label>
+                                </div>
+                            </div>
+
 
                         </div>
                     </section>
                     <!-- SECTION 3 -->
                     <h2>
                         <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
-                        <span class="step-text">Confirm Details</span>
+                        
+                        <span class="step-text">Confirmar</span>
                     </h2>
                     <section>
                         <div class="inner">
-                            <h3>Comfirm Details</h3>
+                            <h3>Confirmar Respuestas</h3>
                             <div class="form-row table-responsive">
                                 <table class="table">
                                     <tbody>
                                         <tr class="space-row">
                                             <th>Full Name:</th>
-                                            <td id="fullname-val"></td>
+                                            <td id="email-val"></td>
                                         </tr>
                                         <tr class="space-row">
-                                            <th>Email Address:</th>
+                                            <th ></th>
                                             <td id="email-val"></td>
                                         </tr>
                                         <tr class="space-row">
@@ -128,9 +402,12 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
                     </section>
                 </div>
-                
+
             </form>
         </div>
     </div>
