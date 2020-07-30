@@ -32,7 +32,6 @@ namespace M_Chat.Models
         public Centro_educativo Centro_Educativo { get; set; }
 
         public List<Diagnostico> Diagnosticos { get; set; }
-
-
+        
     }
 }
